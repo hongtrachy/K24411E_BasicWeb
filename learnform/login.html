@@ -1,0 +1,114 @@
+<html>
+    <head>
+        <title>Tiêu đề trang</title>
+        <style>
+            body {
+                margin: 0;
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: #f3f3f3;
+            }
+            .container {
+                width: min(380px, 90vw);
+                padding: 20px;
+                box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+                background: #ffffff;
+                border-radius: 8px;
+            }
+            .container table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            .container td {
+                padding: 8px;
+            }
+            .container label {
+                display: block;
+                font-weight: 700;
+                font-size: 14px;
+                margin-bottom: 4px;
+            }
+            .container input[type="text"],
+            .container input[type="password"] {
+                width: 100%;
+                padding: 10px 12px;
+                border: 1px solid #ccc;
+                border-radius: 6px;
+                font-size: 14px;
+                transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            }
+            .container input[type="text"]:focus,
+            .container input[type="password"]:focus {
+                outline: none;
+                border-color: #3b82f6;
+                box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12);
+            }
+            .container .title {
+                text-align: center;
+                font-size: 24px;
+                font-weight: bold;
+            }
+            .container .actions {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <form
+                action="process.html"
+                method="get"
+                name="loginForm">
+                <table border="1">
+                    <tr>
+                        <td rowspan="7">
+                            <img src="images/ic_admin.png"
+                            alt="Admin Page"
+                            width="150" height="250">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="title">
+                            Login System
+                        </td>
+                    </tr>
+                <tr>
+                    <td>
+                        <label for="username">User Name:</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input id="username" type="text" name="username" value="obama" required autofocus>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="password">Password:</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input id="password" type="password" name="password" value="123456" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="remember" value="remember">
+                        Remember me
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="actions">
+                        <input type="submit" value="Login" style="background-image: url(images/login.png);">
+                        |
+                        <input type="reset" value="Reset">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Danh sách tỉnh thành hiện tại</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background: #f8f9fb;
+                margin: 0;
+                padding: 30px;
+                display: flex;
+                justify-content: center;
+            }
+            .box {
+                width: min(640px, 90vw);
+                background: #ffffff;
+                padding: 24px;
+                border-radius: 12px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            }
+            h1 {
+                margin-top: 0;
+                font-size: 24px;
+                text-align: center;
+            }
+            select, input {
+                width: 100%;
+                padding: 10px 12px;
+                margin-top: 8px;
+                margin-bottom: 16px;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                font-size: 15px;
+            }
+            label {
+                font-weight: 700;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box">
+            <h1>Danh sách tỉnh, thành phố hiện tại</h1>
+            <form name="provinceForm">
+                <label for="provinces">Chọn tỉnh/thành phố trong 34 tỉnh, thành đã có nghị quyết sắp xếp cấp xã:</label>
+                <select name="provinces" id="provinces">
+                    <option value="vinhlong">Vĩnh Long</option>
+                    <option value="tuyenquang">Tuyên Quang</option>
+                    <option value="thanhhoa">Thanh Hóa</option>
+                    <option value="thainguyen">Thái Nguyên</option>
+                    <option value="tayninh">Tây Ninh</option>
+                    <option value="sonla">Sơn La</option>
+                    <option value="quangtri">Quảng Trị</option>
+                    <option value="quangninh">Quảng Ninh</option>
+                    <option value="quangngai">Quảng Ngãi</option>
+                    <option value="phutho">Phú Thọ</option>
+                    <option value="ninhbinh">Ninh Bình</option>
+                    <option value="nghean">Nghệ An</option>
+                    <option value="laocai">Lào Cai</option>
+                    <option value="langson">Lạng Sơn</option>
+                    <option value="lamdong">Lâm Đồng</option>
+                    <option value="laichau">Lai Châu</option>
+                    <option value="khanhhoa">Khánh Hòa</option>
+                    <option value="hungyen">Hưng Yên</option>
+                    <option value="hue">TP Huế</option>
+                    <option value="hatinh">Hà Tĩnh</option>
+                    <option value="haiphong">TP Hải Phòng</option>
+                    <option value="gialai">Gia Lai</option>
+                    <option value="dongthap">Đồng Tháp</option>
+                    <option value="dongnai">Đồng Nai</option>
+                    <option value="dienbien">Điện Biên</option>
+                    <option value="hanoi">TP Hà Nội</option>
+                    <option value="danang">TP Đà Nẵng</option>
+                    <option value="daklak">Đắk Lắk</option>
+                    <option value="caobang">Cao Bằng</option>
+                    <option value="cantho">TP Cần Thơ</option>
+                    <option value="camau">Cà Mau</option>
+                    <option value="bacninh">Bắc Ninh</option>
+                    <option value="angiang">An Giang</option>
+                    <option value="hcm">TP Hồ Chí Minh</option>
+                </select>
+                <label for="selectedProvince">Value of selected province:</label>
+                <input type="text" id="selectedProvince" readonly>
+                <label for="selectedProvinceName">Name of selected province:</label>
+                <input type="text" id="selectedProvinceName" readonly>
+            </form>
+        </div>
+        <script>
+            const provinces = document.getElementById('provinces');
+            const selectedProvince = document.getElementById('selectedProvince');
+            const selectedProvinceName = document.getElementById('selectedProvinceName');
+
+            function updateSelection() {
+                selectedProvince.value = provinces.value;
+                selectedProvinceName.value = provinces.options[provinces.selectedIndex].text;
+            }
+
+            provinces.addEventListener('change', updateSelection);
+            updateSelection();
+        </script>
+    </body>
+</html>

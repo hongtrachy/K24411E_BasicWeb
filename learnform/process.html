@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <title>Kết quả Đăng Nhập</title>
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: #f2f2f2;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+            }
+            .result-box {
+                background-color: white;
+                padding: 30px;
+                border-radius: 10px;
+                box-shadow: 0 0 20px rgba(0,0,0,0.3);
+                text-align: center;
+                min-width: 300px;
+            }
+            h1 {
+                color: #333;
+                margin-top: 0;
+            }
+            .info {
+                margin: 20px 0;
+                font-size: 16px;
+                text-align: left;
+            }
+            .label {
+                font-weight: bold;
+                color: #555;
+            }
+            .value {
+                color: #0066cc;
+                margin-left: 10px;
+            }
+            .success {
+                color: green;
+                margin: 20px 0;
+                font-size: 18px;
+            }
+            .back-link {
+                margin-top: 20px;
+            }
+            a {
+                background-color: #4CAF50;
+                color: white;
+                padding: 10px 20px;
+                text-decoration: none;
+                border-radius: 5px;
+                display: inline-block;
+            }
+            a:hover {
+                background-color: #45a049;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="result-box">
+            <h1>Đăng Nhập Thành Công</h1>
+            <div class="success">✓ Bạn đã đăng nhập thành công!</div>
+            
+            <div class="info">
+                <div>
+                    <span class="label">Tên đăng nhập:</span>
+                    <span class="value" id="username"></span>
+                </div>
+            </div>
+            
+            <div class="info">
+                <div>
+                    <span class="label">Mật khẩu:</span>
+                    <span class="value" id="password"></span>
+                </div>
+            </div>
+            
+            <div class="back-link">
+                <a href="login.html">← Quay lại đăng nhập</a>
+            </div>
+        </div>
+
+        <script>
+            // Lấy URL hiện tại
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            // Lấy giá trị username và password từ URL
+            const username = urlParams.get('username');
+            const password = urlParams.get('password');
+            
+            // Hiển thị username
+            document.getElementById('username').textContent = username || 'Không xác định';
+            
+            // Hiển thị password
+document.getElementById('password').textContent = password || 'Không xác định';
+        </script>
+    </body>
+</html>
