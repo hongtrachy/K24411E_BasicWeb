@@ -41,22 +41,39 @@
             width: 40px;
             height: 40px;
             margin-right: 20px;
+            cursor: pointer;
         }
 
         .btn-item{
             display: inline-block;
         }
     </style>
+
+    <script>
+        function searchForm(){
+            alert("Searching...");
+        }
+
+        function helpPage(){
+            alert("Help Page");
+        }
+
+        function clearForm(){
+            document.getElementById("myForm").reset();
+        }
+    </script>
+
 </head>
 
 <body>
+
+    <form id="myForm">
 
     <div class="form-box">
 
         <h2>Online Classifieds Search Form</h2>
         <hr>
 
-        <!-- Section 1 -->
         <div class="section">
             <b>1) Search for a classified in the following sections:</b>
             <br><br>
@@ -73,7 +90,6 @@
             <input type="radio" name="section"> All of the above
         </div>
 
-        <!-- Section 2 -->
         <div class="section">
             <b>2) Search the following publications:</b>
             <br><br>
@@ -88,7 +104,6 @@
             <input type="checkbox"> Cashtown Daily News
         </div>
 
-        <!-- Section 3 -->
         <div class="section">
             <b>3) From</b>
 
@@ -99,7 +114,6 @@
             <input type="text" placeholder="mm/dd/yy">
         </div>
 
-        <!-- Section 4 -->
         <div class="section">
             <b>4) Enter a few keywords to describe the classified.</b>
             <br><br>
@@ -107,7 +121,6 @@
             <input type="text" class="keyword">
         </div>
 
-        <!-- Section 5 -->
         <div class="section">
             <b>5) Click one of the options below:</b>
             <br><br>
@@ -115,21 +128,29 @@
             <div class="buttons">
 
                 <div class="btn-item">
-                    <img src="images/Search.gif" alt="Search">
+                    <img src="images/Search.gif"
+                         alt="Search"
+                         onclick="searchForm()">
                 </div>
 
                 <div class="btn-item">
-                    <img src="images/Help.gif" alt="Help">
+                    <img src="images/Help.gif"
+                         alt="Help"
+                         onclick="helpPage()">
                 </div>
 
                 <div class="btn-item">
-                    <img src="images/Cancel.gif" alt="Cancel">
+                    <img src="images/Cancel.gif"
+                         alt="Cancel"
+                         onclick="clearForm()">
                 </div>
 
             </div>
         </div>
 
     </div>
+
+    </form>
 
 </body>
 </html>
