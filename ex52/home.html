@@ -1,0 +1,107 @@
+<html>
+<head>
+    <title>Contact Page</title>
+
+    <style>
+        body{
+            background-color: #e5e5e5;
+            font-family: "Times New Roman";
+        }
+
+        .main{
+            width: 650px;
+            margin: auto;
+            background-color: white;
+            border: 1px solid gray;
+            padding: 20px;
+        }
+
+        h2{
+            margin-top: 0px;
+        }
+
+        label{
+            font-size: 22px;
+        }
+
+        input, select, textarea{
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        .row{
+            display: flex;
+            gap: 20px;
+        }
+
+        .col{
+            width: 50%;
+        }
+
+        textarea{
+            height: 200px;
+            resize: none;
+        }
+
+        .btn{
+            width: 120px;
+            background-color: #99004d;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main">
+
+        <h2>Contact the editorial office</h2>
+
+        <!-- GET METHOD -->
+        <form action="get.html" method="GET">
+
+            <label>Full name</label>
+            <input type="text" name="fullname">
+
+            <div class="row">
+
+                <div class="col">
+                    <label>Email</label>
+                    <input type="email" name="email">
+                </div>
+
+                <div class="col">
+                    <label>Send to</label>
+
+                    <select name="department" size="5">
+                        <option>Editorial board</option>
+                        <option>News Department</option>
+                        <option>Board of Perspectives</option>
+                        <option>World Board</option>
+                        <option>Business Department</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <label>Title</label>
+            <input type="text" name="title">
+
+            <label>Content</label>
+            <textarea name="content"></textarea>
+
+            <input type="submit" value="Send" class="btn">
+
+        </form>
+
+    </div>
+
+</body>
+</html>
