@@ -1,0 +1,187 @@
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Newborn Registration</title>
+
+    <style>
+        body{
+            background-color: #dcdcdc;
+            font-family: "Times New Roman";
+        }
+
+        .main{
+            width: 720px;
+            margin: auto;
+            margin-top: 10px;
+            background-color: #008080;
+            border: 3px solid blue;
+            padding: 20px;
+            color: white;
+        }
+
+        .header{
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header img{
+            width: 650px;
+            height: auto;
+        }
+
+        h1{
+            text-align: center;
+            font-size: 50px;
+            color: #eeeeee;
+        }
+
+        table{
+            width: 100%;
+            font-size: 18px;
+        }
+
+        td{
+            padding: 10px;
+            color: white;
+        }
+
+        input[type=text]{
+            height: 28px;
+            font-size: 16px;
+            color: black;
+            background-color: white;
+            border: 1px solid white;
+        }
+
+        select{
+            width: 180px;
+            font-size: 16px;
+        }
+
+        .button{
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button input{
+            width: 90px;
+            height: 35px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main">
+
+        <div class="header">
+
+            <img src="images/Logo.gif" alt="Hospital Logo">
+
+        </div>
+
+        <h1>Newborn Registration</h1>
+
+        <form>
+
+            <table>
+
+                <tr>
+                    <td width="250">Date:</td>
+                    <td>
+                        <input type="text" value="dd/mm/yy">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>1) Infant's first name:</td>
+                    <td>
+                        <input type="text" size="18">
+
+                        Last:
+                        <input type="text" size="18">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>2) Medical Record #:</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>3) Date of birth:</td>
+                    <td>
+                        <input type="text" value="dd/mm/yy">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>4) Birth weight:</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>5) APGAR score:</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>6) Mother's first name:</td>
+                    <td>
+                        <input type="text" size="18">
+
+                        Last:
+                        <input type="text" size="18">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>7) Father's first name:</td>
+                    <td>
+                        <input type="text" size="18">
+
+                        Last:
+                        <input type="text" size="18">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        8) Physician (check all that apply):
+                    </td>
+
+                    <td>
+                        <select multiple size="4">
+
+                            <option>Dr. Warren Albert</option>
+                            <option>Dr. Maria Alvarez</option>
+                            <option>Dr. Karen Brinkman</option>
+                            <option>Dr. Micheal Kerry</option>
+
+                        </select>
+                    </td>
+                </tr>
+
+            </table>
+
+            <div class="button">
+
+                <input type="submit" value="Register">
+
+                <input type="reset" value="Cancel">
+
+            </div>
+
+        </form>
+
+    </div>
+
+</body>
+</html>

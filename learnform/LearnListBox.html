@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Tiêu đề trang</title>
+        <style>
+            .img-frame{width:200px;height:200px;border:2px solid #ccc;border-radius:6px;overflow:hidden}
+            .img-frame img{width:100%;height:100%;object-fit:cover;display:block}
+        </style>
+    </head>
+    <body>
+    <form name="colorForm">
+        <h3>Select background color:</h3>
+        <select id="colorSelect" name="colorSelect" size="5" onchange="colorForm.selectedColor.value = this.value; colorForm.selectedColor.style.backgroundColor = this.value;">
+            <option value="lightcoral">Light Coral</option>
+            <option value="lightyellow">Light Yellow</option>
+            <option value="lightblue">Light Blue</option>
+            <option value="lightgreen">Light Green</option>
+            <option value="lightpink">Light Pink</option>
+        </select>
+        <p>Your selected color is:</p>
+        <input type="text" id="selectedColor" name="selectedColor">
+    </form>
+
+    <form name="ImgForm">
+        <h3> Select an image:</h3>
+        <select id="imgSelect" name="imgSelect" size="5" onchange="document.getElementById('selectedImage').src = this.value; document.getElementById('selectedImage').alt = this.options[this.selectedIndex].text;">
+            <option value="images/logo_uel.png">Logo UEL</option>
+            <option value="images/logo_vnu.png">Logo VNU</option>
+            <option value="images/myavatar.png">Mặt tui nòe</option>
+        </select>
+        <p>Your selected image is:</p>
+        <div class="img-frame">
+            <img id="selectedImage" name="selectedImg" src="" alt="Selected Image">
+        </div>
+    </form>  
+  </body>
+</html>
