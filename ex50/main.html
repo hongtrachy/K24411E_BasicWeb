@@ -1,0 +1,153 @@
+<html>
+    <head>
+        <title>Tiêu đề trang</title>
+        <style>
+            body{
+                background-color: #c8f3f3;
+                font-family: Times New Roman;
+            }
+            h1{
+                margin-top: 30px;
+            }
+            input, select, textarea{
+                margin-top: 10px;
+                margin-bottom: 15px;
+            }
+            textarea{
+                width: 500px;
+                height: 100px;
+            }
+            th, td{
+                border: 1px solid black;
+            }
+            th, td{
+                padding: 10px;
+            }
+        </style>
+        <script>
+            function guiForm(){
+                alert("Submit thành công!");
+            }
+            function xoaForm(){
+                document.getElementById("myForm").reset();
+                alert("Đã reset dữ liệu!");
+            }
+        </script>
+    </head>
+    <body>
+        <div align="center">
+            <img src="images/DeLong.jpg">
+        </div>  
+        <h1>Travel Expense Report</h1>
+        <hr>
+        <form id="myForm">
+            <p>
+                1) First Name:
+                <input type="text">
+                Last Name:
+                <input type="text">
+            </p>
+            <p>
+                2) Social Security Number:
+                <input type="text">
+            </p>
+            <p>
+                3) Department:
+                <select>
+                    <option>Accounting</option>
+                    <option>IT</option>
+                    <option>Marketing</option>
+                    <option>HR</option>
+                </select>
+            </p>
+            <p>
+                4) Describe the purpose of your trip.
+            </p>
+                <textarea></textarea>
+            <p>
+                5) Itemize your travel expenses
+            </p>
+            <table>
+                <tr>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th>Category</th>
+                    <th>Amount</th>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" placeholder="mm/dd/yy">
+                    </td>
+                    <td>
+                        <input type="text">
+                    </td>
+                    <td>
+                        <select>
+                            <option>Meal</option>
+                            <option>Hotel</option>
+                            <option>Taxi</option>
+                            <option>Flight</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" placeholder="mm/dd/yy">
+                    </td>
+                    <td>
+                        <input type="text">
+                    </td>
+
+                    <td>
+                        <select>
+                            <option>Meal</option>
+                            <option>Hotel</option>
+                            <option>Taxi</option>
+                            <option>Flight</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" placeholder="mm/dd/yy">
+                    </td>
+                    <td>
+                        <input type="text">
+                    </td>
+                    <td>
+                        <select>
+                            <option>Meal</option>
+                            <option>Hotel</option>
+                            <option>Taxi</option>
+                            <option>Flight</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+            </table>
+            <p>
+                6) Have you submitted your receipts?
+                <input type="radio" name="r"> Yes
+                <input type="radio" name="r"> No
+            </p>
+            <input type="button"
+                value="Submit travel expenses"
+                onclick="guiForm()">
+            <input type="button"
+                value="Reset"
+                onclick="xoaForm()">
+        </form>
+        <p>
+            Questions? Contact Debbie Larson in Accounting (ext. 2150).
+        </p>
+        </div>
+    </body>
+</html>
