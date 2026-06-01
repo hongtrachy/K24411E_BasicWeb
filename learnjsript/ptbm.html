@@ -1,0 +1,49 @@
+<html> 
+    <head>
+        <title> Tiêu đề trang</title>
+        <script>
+            function solveEquation() {
+                // Get the values from the input fields
+                var a = parseFloat(document.getElementById("input_a").value);
+                var b = parseFloat(document.getElementById("input_b").value);
+
+                // Calculate the result
+                var result = -b / a;
+
+                // Display the result
+                document.getElementById("result1").value = result;
+            }
+        </script>
+    </head>
+    <body>
+        <form name="myForm">
+            <h1>First Degree Equation</h1>
+            <table>
+                <tr>
+                    <td>a:</td>
+                    <td><input type="text" id="input_a" name="input_result"/></td>
+                </tr>
+                <tr>
+                    <td>b:</td>
+                    <td><input type="text" id="input_b" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        result way 1:
+                    </td>
+                    <td><input type="text" id="result1" readonly /></td>
+                </tr>
+                    <tr>
+                        <td>
+                            result way 2:
+                        </td>
+                        <td><input type="text" id="td_result"></td>
+                <tr>
+                    <td colspan="2">
+                        <button onclick="solveEquation()">Solve</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

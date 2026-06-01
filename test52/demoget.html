@@ -1,0 +1,67 @@
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>GET RESULT</title>
+</head>
+<body>
+<p>
+    Full Name:
+
+    <script>
+        document.write(
+            new URLSearchParams(window.location.search)
+            .get("fullname")
+        );
+    </script>
+
+    <p>
+    Email:
+
+    <script>
+        document.write(
+            new URLSearchParams(window.location.search)
+            .get("email")
+        );
+    </script>
+
+    <p>
+    Department:
+
+    <script>
+        document.write(
+            new URLSearchParams(window.location.search)
+            .get("department")
+        );
+    </script>
+
+    <p>
+    Title:
+
+    <script>
+        document.write(
+            new URLSearchParams(window.location.search)
+            .get("title")
+        );
+    </script>
+
+    </p>
+    <p>
+    Content:
+
+    <script>
+        document.write(
+            new URLSearchParams(window.location.search)
+            .get("content")
+        );
+    </script>
+
+    </p>
+
+
+    </p>
+
+    </p>
+
+</p>
+</body>
+</html>
