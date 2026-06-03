@@ -2,108 +2,100 @@
 <head>
     <meta charset='utf-8'>
     <title>Math Function</title>
-
     <style>
         table{
             width:500px;
             margin:auto;
             border-collapse:collapse;
         }
-
         td{
             border:1px solid black;
             padding:10px;
         }
-
         input{
             width:100%;
         }
-
         h2{
             text-align:center;
         }
     </style>
 </head>
+    <body>
+    <h2>Math Function</h2>
+        <table>
+            <tr>
+                <td>a:</td>
+                <td><input type="text" id="a"></td>
+            </tr>
 
-<body>
+            <tr>
+                <td>b:</td>
+                <td><input type="text" id="b"></td>
+            </tr>
 
-<h2>Math Function</h2>
+            <tr>
+                <td>c:</td>
+                <td><input type="text" id="c"></td>
+            </tr>
 
-    <table>
-        <tr>
-            <td>a:</td>
-            <td><input type="text" id="a" value="30"></td>
-        </tr>
+            <tr>
+                <td>Result:</td>
+                <td><input type="text" id="result"></td>
+            </tr>
 
-        <tr>
-            <td>b:</td>
-            <td><input type="text" id="b" value="45"></td>
-        </tr>
+            <tr>
+                <td colspan="2">
+                    <button onclick="max()">MAX</button>
+                    <button onclick="min()">MIN</button>
+                    <button onclick="sin()">sin(a)</button>
+                    <button onclick="cos()">cos(a)</button>
+                    <button onclick="pow()">a^b</button>
+                </td>
+            </tr>
+        </table>
+        <script>
 
-        <tr>
-            <td>c:</td>
-            <td><input type="text" id="c" value="90"></td>
-        </tr>
+            function max()
+            {
+                var a = parseInt(document.getElementById("a").value);
+                var b = parseInt(document.getElementById("b").value);
+                var c = parseInt(document.getElementById("c").value);
 
-        <tr>
-            <td>Result:</td>
-            <td><input type="text" id="result"></td>
-        </tr>
+                document.getElementById("result").value = Math.max(a,b,c);
+            }
 
-        <tr>
-            <td colspan="2">
-                <button onclick="max()">MAX</button>
-                <button onclick="min()">MIN</button>
-                <button onclick="sin()">sin(a)</button>
-                <button onclick="cos()">cos(a)</button>
-                <button onclick="pow()">a^b</button>
-            </td>
-        </tr>
-    </table>
+            function min()
+            {
+                var a = parseInt(document.getElementById("a").value);
+                var b = parseInt(document.getElementById("b").value);
+                var c = parseInt(document.getElementById("c").value);
 
-    <script>
+                document.getElementById("result").value = Math.min(a,b,c);
+            }
 
-        function max()
-        {
-            var a = parseInt(document.getElementById("a").value);
-            var b = parseInt(document.getElementById("b").value);
-            var c = parseInt(document.getElementById("c").value);
+            function sin()
+            {
+                var a = parseInt(document.getElementById("a").value);
 
-            document.getElementById("result").value = Math.max(a,b,c);
-        }
+                document.getElementById("result").value = Math.sin(a);
+            }
 
-        function min()
-        {
-            var a = parseInt(document.getElementById("a").value);
-            var b = parseInt(document.getElementById("b").value);
-            var c = parseInt(document.getElementById("c").value);
+            function cos()
+            {
+                var a = parseInt(document.getElementById("a").value);
 
-            document.getElementById("result").value = Math.min(a,b,c);
-        }
+                document.getElementById("result").value = Math.cos(a);
+            }
 
-        function sin()
-        {
-            var a = parseInt(document.getElementById("a").value);
+            function pow()
+            {
+                var a = parseInt(document.getElementById("a").value);
+                var b = parseInt(document.getElementById("b").value);
 
-            document.getElementById("result").value = Math.sin(a);
-        }
+                document.getElementById("result").value = Math.pow(a,b);
+            }
 
-        function cos()
-        {
-            var a = parseInt(document.getElementById("a").value);
+        </script>
 
-            document.getElementById("result").value = Math.cos(a);
-        }
-
-        function pow()
-        {
-            var a = parseInt(document.getElementById("a").value);
-            var b = parseInt(document.getElementById("b").value);
-
-            document.getElementById("result").value = Math.pow(a,b);
-        }
-
-    </script>
-
-</body>
+    </body>
 </html>

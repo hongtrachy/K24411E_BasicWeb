@@ -1,0 +1,115 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Exercise 57</title>
+    <script>
+    function tinhTien1()
+        {
+            var sl = document.getElementById("sl1").value;
+            var tien = 19.95 * sl;
+
+            document.getElementById("thanhtien1").value = tien;
+        }
+    function tinhTien2()
+        {
+            var sl = document.getElementById("sl2").value;
+            var tien = 29.95 * sl;
+
+            document.getElementById("thanhtien2").value = tien;
+        }
+    function tinhTien3()
+        {
+            var sl = document.getElementById("sl3").value;
+            var tien = 39.95 * sl;
+
+            document.getElementById("thanhtien3").value = tien;
+        }
+    function tinhTong()
+        {
+            var t1 = document.getElementById("thanhtien1").value;
+            var t2 = document.getElementById("thanhtien2").value;
+            var t3 = document.getElementById("thanhtien3").value;
+            if(t1=="") t1=0;
+            if(t2=="") t2=0;
+            if(t3=="") t3=0;
+            var tong = eval(t1 + "+" + t2 + "+" + t3);
+            document.getElementById("tong").value = tong;
+        }
+</script>
+
+</head>
+
+<body>
+
+    <table border="1" width="800">
+
+        <tr>
+            <th>Part Number</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Qty</th>
+            <th>Item Total</th>
+        </tr>
+
+        <tr>
+            <td>C112</td>
+            <td>Mouse</td>
+            <td>19.95$</td>
+
+            <td>
+                <input type="text" id="sl1" onchange="tinhTien1()">
+            </td>
+
+            <td>
+                <input type="text" id="thanhtien1" readonly>
+            </td>
+        </tr>
+
+        <tr>
+            <td>B124</td>
+            <td>Keyboard US</td>
+            <td>29.95$</td>
+
+            <td>
+                <input type="text" id="sl2" onchange="tinhTien2()">
+            </td>
+
+            <td>
+                <input type="text" id="thanhtien2" readonly>
+            </td>
+        </tr>
+
+        <tr>
+            <td>U125</td>
+            <td>USB KingMax</td>
+            <td>39.95$</td>
+
+            <td>
+                <input type="text" id="sl3" onchange="tinhTien3()">
+            </td>
+
+            <td>
+                <input type="text" id="thanhtien3" readonly>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="4" align="right">
+                Total
+            </td>
+
+            <td>
+                <input type="text" id="tong" readonly>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="5" align="right">
+                <input type="button" value="Sum" onclick="tinhTong()">
+            </td>
+        </tr>
+
+    </table>
+
+</body>
+</html>
