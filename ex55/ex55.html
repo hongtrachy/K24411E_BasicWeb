@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <title>Phương trình bậc 2</title>
+        <script type="text/javascript">
+            function giaiPhuongTrinh() 
+            {
+                a = Number(document.getElementById("hsa").value);
+                b = Number(document.getElementById("hsb").value);
+                c = Number(document.getElementById("hsc").value);
+                kq = document.getElementById("ketqua");
+                // Trường hợp phương trình bậc 1
+                if (a == 0) {
+                    if (b == 0) {
+                        if (c == 0) {
+                            kq.innerText = "Vô số nghiệm";
+                        } else {
+                            kq.innerText = "Vô nghiệm";
+                        }
+                    } else {
+                        x = -c / b;
+                        kq.innerText = "x = " + x;
+                    }
+                    return;
+                }
+                // Phương trình bậc 2
+                    delta = b * b - 4 * a * c;
+                if (delta < 0) {
+                    kq.innerText = "Vô nghiệm";
+                }
+                else if (delta == 0) {
+                    x = -b / (2 * a);
+                    kq.innerText = "Nghiệm kép x = " + x;
+                }
+                else {
+                    x1 = (-b + Math.sqrt(delta)) / (2 * a);
+                    x2 = (-b - Math.sqrt(delta)) / (2 * a);
+
+                    kq.innerText = "x1 = " + x1 + " ; x2 = " + x2;
+                }
+            }
+            function xoaDuLieu() {
+                document.getElementById("hsa").value = "";
+                document.getElementById("hsb").value = "";
+                document.getElementById("hsc").value = "";
+                document.getElementById("ketqua").innerText = "";
+            }
+        </script>
+    </head>
+    <body>
+        <table border="1">
+            <tr>
+                <td colspan="2">
+                    <b>Phương trình bậc 2</b>
+                </td>
+            </tr>
+            <tr>
+                <td>Hệ số a:</td>
+                <td><input type="text" id="hsa"></td>
+            </tr>
+            <tr>
+                <td>Hệ số b:</td>
+                <td><input type="text" id="hsb"></td>
+            </tr>
+            <tr>
+                <td>Hệ số c:</td>
+                <td><input type="text" id="hsc"></td>
+            </tr>
+            <tr>
+                <td>Kết quả:</td>
+                <td id="ketqua"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="button" value="Find solution"
+                        onclick="giaiPhuongTrinh()">
+                    <input type="button" value="Clear"
+                        onclick="xoaDuLieu()">
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

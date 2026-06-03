@@ -1,0 +1,83 @@
+<html>
+<head>
+    <title>Page Title</title>
+    <script>
+        function showCourse(){
+            var course = GPAForm.courseSelect.value;
+            var text = '';
+            if (course === 'course1') {
+                text = 'Course1: Qúa trình 20%, Giữa kỳ 30%, Cuối kỳ 50%';
+                GPAForm.input_Bonus.value = 0;
+                GPAForm.input_Bonus.parentNode.parentNode.style.display = 'none';
+            } else if (course === 'course2') {
+                text = 'Course2: Qúa trình 10%, Giữa kỳ 40%, Cuối kỳ 35%, Điểm cộng 15%';
+                GPAForm.input_Bonus.parentNode.parentNode.style.display = 'table-row';
+            } else if (course === 'course3') {
+                text = 'Course3: Qúa trình 10%, Giữa kỳ 60%, Cuối kỳ 30%';
+                GPAForm.input_Bonus.value = 0;
+                GPAForm.input_Bonus.parentNode.parentNode.style.display = 'none';
+            }
+            GPAForm.courseWeights.value = text;
+        }
+        function calculateAverage(){
+            var QT = eval(GPAForm.input_QT.value) || 0;
+            var GK = eval(GPAForm.input_GK.value) || 0;
+            var CK = eval(GPAForm.input_CK.value) || 0;
+            var bonus = eval(GPAForm.input_Bonus.value) || 0;
+            var course = GPAForm.courseSelect.value;
+            var wQT, wGK, wCK, wBonus;
+            if (course === 'course1') {
+                wQT = 0.20; wGK = 0.30; wCK = 0.50; wBonus = 0;
+            } else if (course === 'course2') {
+                wQT = 0.15; wGK = 0.40; wCK = 0.30; wBonus = 0.15;
+            } else if (course === 'course3') {
+                wQT = 0.10; wGK = 0.60; wCK = 0.30; wBonus = 0;
+            }
+            var average = QT * wQT + GK * wGK + CK * wCK + bonus * wBonus;
+            GPAForm.input_average.value = average.toFixed(2);
+        }
+    </script>
+</head>
+<body>
+    <h1>
+        GPA Calculator
+    </h1>
+    <form name="GPAForm">
+        <table>
+            <tr>
+                <td> Select Course </td>
+                <td> <select id="courseSelect" name="courseSelect" onchange="showCourse()">
+                        <option value="course1">Course1</option>
+                        <option value="course2">Course2</option>
+                        <option value="course3">Course3</option>
+                    </select> </td>
+            </tr>
+            <tr>
+                <td> Course weight </td>
+                <td style="white-space: nowrap"><input type="text" name="courseWeights" readonly value="Course1: Qúa trình 20%, Giữa kỳ 30%, Cuối kỳ 50%" style="width:100%"></td>
+            </tr>
+            <tr>
+                <td> Qúa trình</td>
+                <td> <input type="text" id="input_QT" name="input_QT">  </td>
+            </tr>
+            <tr>
+                <td>Giữa kỳ</td>
+                <td> <input type="text" id="input_GK" name="input_GK">  </td>
+            </tr>
+            <tr id="bonusRow" name="bonusRow" style="display: none;">
+<td> Điểm cộng</td>
+                <td>
+                    <input type="text" id="input_Bonus" name="input_Bonus" value="0">
+                </td>
+            </tr>
+            <tr>
+                <td> Average =</td>
+                <td> <input type="text" id="input_average" readonly name="input_average">  </td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="button" value="Calculate" onclick="calculateAverage()"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
