@@ -30,6 +30,28 @@
         </form>
     </div>
     <hr>
+    <div>
+        <h2>Add New Product</h2>
+        <form name="add_product_form" onsubmit="return addNewProduct()">
+            <p>
+                <label>ID:</label>
+                <input type="number" name="new_product_id" id="new_product_id" required>
+            </p>
+            <p>
+                <label>Name:</label>
+                <input type="text" name="new_product_name" id="new_product_name" required>
+            </p>
+            <p>
+                <label>Price:</label>
+                <input type="number" name="new_product_price" id="new_product_price" step="0.01" required>
+            </p>
+            <p>
+                <button type="submit">Add New Product</button>
+                <button type="reset">Clear</button>
+            </p>
+        </form>
+    </div>
+    <hr>
     <h2>Product List</h2>
     <table id="tbl_product">
         <thead>
