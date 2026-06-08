@@ -1,0 +1,52 @@
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Tiêu đề trang</title>
+    <link rel="stylesheet" href="css/main.css"> 
+    <script>
+        var products=[
+            {id: 1, name: "Product A", price: 10.99},
+            {id: 2, name: "Product B", price: 19.99},
+            {id: 3, name: "Product C", price: 5.49}
+        ]
+    </script>
+</head>
+<body>
+    <div>
+        <h2>Product Details</h2>
+        <form name="product_form">
+            <p>
+                <label>ID:</label>
+                <input type="text" name="product_id" id="product_id" readonly>
+            </p>
+            <p>
+                <label>Name:</label>
+                <input type="text" name="product_name" id="product_name" readonly>
+            </p>
+            <p>
+                <label>Price:</label>
+                <input type="text" name="product_price" id="product_price" readonly>
+            </p>
+        </form>
+    </div>
+    <hr>
+    <h2>Product List</h2>
+    <table id="tbl_product">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>#action</th>
+            </tr>
+        </thead>
+        <tbody id="product_table_body">
+            <!-- Product rows will be inserted here by JavaScript -->
+        </tbody>
+    </table>
+    <script src="js/main.js"></script>
+    <script>
+        load_product_data(products, document.getElementById('tbl_product'));
+    </script>
+</body>
+</html>

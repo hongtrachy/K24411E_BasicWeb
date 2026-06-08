@@ -1,0 +1,42 @@
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Tiêu đề trang</title>
+     <script>
+        function parseUri() {
+            const input = document.getElementById('uri').value.trim();
+            if (!input) {
+                alert('Vui lòng nhập URI');
+                return false;
+            }
+            try {
+                const url = new URL(input);
+                document.getElementById('protocol').textContent = url.protocol.replace(':', '');
+                document.getElementById('host').textContent = url.hostname;
+                document.getElementById('port').textContent = url.port || '(default)';
+
+                const params = new URLSearchParams(url.search);
+                document.getElementById('query-id').textContent = params.get('id') || '';
+                document.getElementById('query-name').textContent = params.get('name') || '';
+            } catch (error) {
+                alert('URI không hợp lệ');
+            }
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <form name="myform" onsubmit="return parseUri()">
+            <p>URI: </p>
+            <input type="text" name="uri" id="uri" maxlength="200" size="100"
+            value="http://www.w3schools.com/jsref/prop_loc_href.asp?id=123&name=abc">
+        <button type="submit"> Get Information</button>
+        <p>Protocol: <span id="protocol"></span></p>
+        <p>Host: <span id="host"></span></p>
+        <p>Port: <span id="port"></span></p>
+        <p>Id: <span id="query-id"></span></p>
+        <p>Name: <span id="query-name"></span></p>
+    </form>
+   
+</body>
+</html>

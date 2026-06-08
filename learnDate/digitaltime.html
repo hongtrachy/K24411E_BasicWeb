@@ -1,0 +1,32 @@
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Tiêu đề trang</title>
+</head>
+<body>
+    <div style="font-size: 24px; font-weight: bold;"
+     id="my_digitaltimer"></div>
+
+     <script>
+        function make_my_digital_timer()
+        {
+            var my_digitaltimer = document.getElementById("my_digitaltimer");
+            var my_date = new Date();
+            var hours=my_date.getHours();
+            var minutes=my_date.getMinutes();
+            var seconds=my_date.getSeconds();    
+            if (hours < 10) hours = "0" + hours;
+            if (minutes < 10) minutes = "0" + minutes; 
+            if (seconds < 10) seconds = "0" + seconds;
+            my_digitaltimer.innerHTML = hours + ":" + minutes + ":" + seconds;
+            
+            // Đổi màu văn bản theo từng giây
+            var textColors = ["red", "blue", "green", "purple", "orange"];
+            var colorIndex = seconds % 5;
+            my_digitaltimer.style.color = textColors[colorIndex];
+        }
+        setInterval(make_my_digital_timer, 1000);
+        make_my_digital_timer(); // Gọi ngay lần đầu để hiển thị màu
+     </script>
+</body>
+</html>

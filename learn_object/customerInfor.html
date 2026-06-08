@@ -1,0 +1,113 @@
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Tiêu đề trang</title>
+    <script>
+        var customerTypes = ["regular", "vip", "potential", "lựu đạn"];
+
+        function saveCustomerInfo()
+        {
+            var form = document.forms["Customer_form"];
+            var name = form["CustomerName"].value;
+            var address = form["CustomerAddress"].value;
+            var phone = form["CustomerPhone"].value;
+            var email = form["CustomerEmail"].value;
+            var type = form["CustomerType"].value;
+            var day = form["birthday_day"].value;
+            var month = form["birthday_month"].value;
+            var year = form["birthday_year"].value;
+
+            var customerInfo = "Name: " + name + "<br>" +
+                               "Address: " + address + "<br>" +
+                               "Phone: " + phone + "<br>" +
+                               "Email: " + email + "<br>" +
+                               "Type: " + type + "<br>" +
+                               "Birthday: " + day + "/" + month + "/" + year;
+
+            document.getElementById("customer_information").innerHTML = customerInfo;
+        }
+
+    </script>
+</head>
+<body>
+    <form name="Customer_form">
+        <table>
+            <tr>
+                <td>Customer Name:</td>
+                <td><input type="text" name="CustomerName"></td>
+            </tr>
+            <tr>
+                <td>Customer Address:</td>
+                <td><input type="text" name="CustomerAddress"></td>
+            </tr>
+            <tr>
+                <td>Customer Phone:</td>
+                <td><input type="text" name="CustomerPhone"></td>
+            </tr>
+                <tr>
+                    <td>Customer Email:</td>
+                    <td><input type="text" name="CustomerEmail"></td>
+                </tr>
+                <tr>
+                    <td>Customer Birthday:</td>
+                    <td>
+                        <select name="birthday_day" id="birthday_day"></select>
+                        <select name="birthday_month" id="birthday_month"></select>
+                        <select name="birthday_year" id="birthday_year"></select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Customer Type:</td>
+                    <td>
+                        <select name="CustomerType" id="customer_type"></select>
+                    </td>
+                </tr>
+        </table>
+    </form>
+    <button type="button" onclick="saveCustomerInfo()">Save</button>
+    <div id="customer_information" style="font-weight: bold;font-size:20px;"
+    </div>
+<form>
+    <script>
+        function load_date_for_bỉthday_selection()
+        {
+            var daySelect = document.getElementById('birthday_day');
+            var monthSelect = document.getElementById('birthday_month');
+            var yearSelect = document.getElementById('birthday_year');
+            var typeSelect = document.getElementById('customer_type');
+
+            for (var d = 1; d <= 31; d++) {
+                var dayOption = document.createElement('option');
+                dayOption.value = d;
+                dayOption.text = d;
+                daySelect.appendChild(dayOption);
+            }
+
+            for (var m = 1; m <= 12; m++) {
+                var monthOption = document.createElement('option');
+                monthOption.value = m;
+                monthOption.text = m;
+                monthSelect.appendChild(monthOption);
+            }
+
+            for (var y = 1965; y <= 2020; y++) {
+                var yearOption = document.createElement('option');
+                yearOption.value = y;
+                yearOption.text = y;
+                yearSelect.appendChild(yearOption);
+            }
+
+            for (var i = 0; i < customerTypes.length; i++) {
+                var typeOption = document.createElement('option');
+                typeOption.value = customerTypes[i];
+                typeOption.text = customerTypes[i];
+                typeSelect.appendChild(typeOption);
+            }
+        }
+
+        window.onload = load_date_for_bỉthday_selection;
+    </script>
+</form>
+
+</body>
+</html>
