@@ -1,0 +1,26 @@
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Tiêu đề trang</title>
+    <script src='/LearnXMLDom/js/customer.js'></script>
+    <script src='/LearnXMLDom/js/main.js'></script>
+    <link rel='stylesheet' type='text/css' href='/LearnXMLDom/css/main.css'>
+</head>
+<body>
+    <table id='tblCustomer' border='1'>
+        <thead>
+            <tr>
+                <th>Customer ID</th>
+                <th>Customer Name</th>
+                <th> Customer Age</th>
+                <th>Customer City</th>
+            </tr>
+        </thead>
+    <tbody id='bodycustomer'>
+        </tbody>
+    </table>
+    <script>
+        load_customers(customer,document.getElementById('bodycustomer'));
+    </script>
+</body>
+</html>
