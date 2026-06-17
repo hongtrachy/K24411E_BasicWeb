@@ -3,8 +3,10 @@ let student =
 
 document.getElementById("detailTable").innerHTML = `
 <tr>
-    <th>Field</th>
-    <th>Value</th>
+    <th colspan="2" style="background-color:#06d613;">
+        Student Information
+    </th>
+    
 </tr>
 
 <tr>
